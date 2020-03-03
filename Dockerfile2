@@ -10,7 +10,7 @@ LABEL maintainer="Roy Bales <rbales79@gmail.com>"
 LABEL terraform_version=${TERRAFORM_VERSION}
 LABEL ansible_version=${ANSIBLE_VERSION}
 
-RUN dnf install -y unzip openssh-clients jq python3 python3-pip git sshpass \
+RUN dnf install -y epel-release unzip openssh-clients jq python3 python3-pip git sshpass \
     && pip3 install ansible==${ANSIBLE_VERSION} awscli \
     && curl -O https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip terraform*.zip \
