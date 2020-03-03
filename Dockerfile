@@ -12,8 +12,8 @@ LABEL ansible_version=${ANSIBLE_VERSION}
 
 RUN dnf install -y epel-release
 
-RUN dnf install -y unzip openssh-clients jq python3 python3-pip python-netaddr git sshpass \
-    && pip3 install ansible==${ANSIBLE_VERSION} awscli \
+RUN dnf install -y unzip openssh-clients jq python3 python3-pip git sshpass \
+    && pip3 install ansible==${ANSIBLE_VERSION} awscli netaddr \
     && curl -O https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip terraform*.zip \
     && mv terraform /usr/local/bin
